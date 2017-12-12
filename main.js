@@ -10,11 +10,13 @@ function newGame() {
   for (let i = 0; i < imgArray.length; i++) {
     let card = document.createElement("div")
     let img = document.createElement("img")
-
+    img.setAttribute("id", i)
     img.addEventListener('click', function(event) {
-      match.push(event.target.attributes[0].value)
+      match.push(event.target.attributes[1].value)
+      console.log(match);
       if (match.length === 2) {
-        if (match[0] === match[1]) {
+        if (match[0] !== match[1]) {
+
         }
         match = []
       }
