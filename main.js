@@ -28,8 +28,8 @@ function newGame() {
       if (match.length === 2) {
         if (match[0] !== match[1]) {
           setTimeout(function(){
-            document.getElementById(flipped[1]).style.webkitFilter = "brightness(50%)";
-            document.getElementById(flipped[0]).style.webkitFilter = "brightness(50%)";
+            document.getElementById(flipped[1]).style.webkitFilter = "brightness(0%)";
+            document.getElementById(flipped[0]).style.webkitFilter = "brightness(0%)";
             flipped = []
           }, 500);
 // If cards match, add to variable that goes to 8 and then clear board.
