@@ -24,7 +24,7 @@ body {
 img {
   max-height: 130px;
   cursor: pointer;
-  filter: brightness(50%);
+  filter: brightness(0%);
 }
 
 h1 {
