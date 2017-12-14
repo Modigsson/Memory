@@ -6,7 +6,7 @@ body {
   width: 100vw;
   height: 100vh;
   overflow: hidden;
-  background-image: url("background.jpeg");
+  background-image: url("bilder/background.jpeg");
   background-repeat: no-repeat;
   background-size: auto;
   display: flex;
