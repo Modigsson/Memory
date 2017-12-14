@@ -38,3 +38,7 @@ button {
     top: 80px;
     cursor: pointer;
 }
+
+button:hover {
+  background-color: tomato;
+}
