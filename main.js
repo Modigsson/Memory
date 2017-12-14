@@ -8,8 +8,8 @@ function newGame() {
   let match = []
   let flipped = []
   let finished = 0
-  const win = '';
-  const button = '';
+  let win = '';
+  let button = '';
 // Function that prevents cheating by dragging cards while turned.
   window.ondragstart = function() {return false;}
   // Loop out DIVS to the board and add content.
@@ -37,13 +37,18 @@ function newGame() {
           finished++
           flipped = []
           if (finished === 8) {
-            document.getElementById('gameBoard').innerHTML = "";
-            const win = document.createElement('h1')
-            win.textContent = 'You did it =)';
+            document.getElementById('gameBoard').innerHTML = ""
+             win = document.createElement('h1')
+            win.textContent = 'You did it =)'
             gameBoard.appendChild(win)
-            const button = document.createElement('button')
+             button = document.createElement('button')
             gameBoard.appendChild(button)
-            button.textContent = 'New game';
+            button.textContent = 'New game'
+            button.addEventListener('click', () => {
+              newGame()
+              win.remove()
+              button.remove()
+            })
           }
         }
         match = []
