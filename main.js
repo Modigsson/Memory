@@ -8,6 +8,8 @@ function newGame() {
   let match = []
   let flipped = []
   let finished = 0
+  const win = '';
+  const button = '';
 // Function that prevents cheating by dragging cards while turned.
   window.ondragstart = function() {return false;}
   // Loop out DIVS to the board and add content.
@@ -26,8 +28,8 @@ function newGame() {
       if (match.length === 2) {
         if (match[0] !== match[1]) {
           setTimeout(function(){
-            document.getElementById(flipped[1]).style.webkitFilter = "brightness(50%)"
-            document.getElementById(flipped[0]).style.webkitFilter = "brightness(50%)"
+            document.getElementById(flipped[1]).style.webkitFilter = "brightness(50%)";
+            document.getElementById(flipped[0]).style.webkitFilter = "brightness(50%)";
             flipped = []
           }, 500);
 // If cards match, add to variable that goes to 8 and then clear board.
@@ -36,6 +38,12 @@ function newGame() {
           flipped = []
           if (finished === 8) {
             document.getElementById('gameBoard').innerHTML = "";
+            const win = document.createElement('h1')
+            win.textContent = 'You did it =)';
+            gameBoard.appendChild(win)
+            const button = document.createElement('button')
+            gameBoard.appendChild(button)
+            button.textContent = 'New game';
           }
         }
         match = []
@@ -59,5 +67,4 @@ function newGame() {
     return array;
   }
 }
-
 newGame()
